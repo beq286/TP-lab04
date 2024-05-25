@@ -1,0 +1,11 @@
+name: lab03 test
+run-name: ${{ github.actor }} test
+on: [push]
+jobs:
+  Lab03_building_CMake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Building
+        run: cd hello_world_application && cmake -H. -B build && cmake --build build && cd ../solver_application && cmake -H. -B build && cmake --build build
