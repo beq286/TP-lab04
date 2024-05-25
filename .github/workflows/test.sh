@@ -1,7 +1,4 @@
-   #!/bin/bash
-      chmod +x test.sh
-   
-   
+root=./
 cmake --build $root/formatter_lib
 cmake --build $root/formatter_ex_lib 
 cmake --build $root/hello_world_application 
