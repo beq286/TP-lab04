@@ -1,11 +1,10 @@
-name: lab03 test
-run-name: ${{ github.actor }} test
+name: tp-lab-actions
+run-name: ${{ github.actor }} is running TPLab04
 on: [push]
 jobs:
-  Lab03_building_CMake:
+  container-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - name: Building
-        run: cd hello_world_application && cmake -H. -B build && cmake --build build && cd ../solver_application && cmake -H. -B build && cmake --build build
+      - uses: actions/checkout@v4
+      - name: Test project
+        run: ./.github/workflows/test.sh
