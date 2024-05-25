@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Test project
-        run: ./.github/workflows/test.sh
+        run: cd hello_world_application && cmake -H. -B build && cmake --build build && cd ../solver_application && cmake -H. -B build && cmake --build build
